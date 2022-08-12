@@ -1,0 +1,101 @@
+<div class="navbar-container">
+  <mat-toolbar class="navbar-toolbar flex justify-center w-100 text-center position-relative">
+    <div class="navbar-opcion px-10 py-5" (click)="snav.toggle()">
+      <img class="m-auto" src="assets/login/logo.svg" alt="logo">
+    </div>
+    <div class="tituloPage">
+      Ventas
+    </div>
+    <div class="slider-carro">
+      <div class="mat-carrito">
+        <div class="flex p-5">
+          <mat-icon class="carrito">shopping_cart</mat-icon>
+          <h6 class="texto">
+            Carrito de <br>compra
+          </h6>
+        </div>
+        <div class="box-gris mt-5">
+          <span class="titulo-total">Total</span>
+          <h6 class="total">${{totalValor|number}}</h6>
+        </div>
+      </div>
+
+      <div class="totales m-3">
+        <div class="card-total grid grid-cols-2 gap-4">
+          <ng-container *ngFor="let item of totales;">
+            <div class="flex flex-col justify-start text-left">
+              <span class="text-xs">{{item.nombre}}</span>
+              <span class="text-xs font-bold">${{item.precio|number}} x {{item.cantidad|number}}</span>
+            </div>
+            <div class="justify-end text-right text-red-600 cursor" (click)="item.cantidad=0">
+              <mat-icon>delete</mat-icon>
+            </div>
+
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="navbar-sidenav-container">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <mat-nav-list>
+        <div class="opcionImagen">
+          <mat-icon>edit</mat-icon>
+        </div>
+        <img class="m-auto" src="assets/menu/Imagen1.png" alt="logo">
+        <a mat-list-item routerLink=".">
+          <mat-icon>home</mat-icon>
+          Home
+        </a>
+        <a mat-list-item routerLink=".">
+          <mat-icon>people</mat-icon>
+          Cliente
+        </a>
+        <a mat-list-item routerLink=".">
+          <mat-icon>shopping_basket</mat-icon>
+          Ventas
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content>
+      <div class="container justify-center flex">
+        <div class="grid grid-cols-4 w-full">
+          <div class="py-5 col-span-4 px-5 shadow bg-white">
+            <input matInput class="inputBuscar" [(ngModel)]="filtrarTabla" >
+
+          </div>
+
+
+
+          <ng-container *ngFor="let item of productos    | filter: filtrarTabla;">
+            <div class="card p-3">
+              <div class="bg-white rounded-lg flex justify-center flex-col text-center mb-5 ">
+                <img class="w-100" src="assets/productos/{{item.imagen}}.png" alt="logo">
+                <span class="text-xl">{{item.nombre}}</span>
+                <span class="text-xl">${{item.precio|number}}</span>
+              </div>
+              <div class="botones grid grid-cols-3 bg-white rounded-l-lg rounded-r-lg">
+                <button (click)="resta(item)" class="rounded-l-lg botonColor botonDerecha shadow">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <input matInput type="number" [(ngModel)]="item.cantidad" class="shadow text-center inputTamano">
+                <button (click)="suma(item)" class="rounded-r-lg botonColor botonIzquierda shadow">
+                  <mat-icon>add</mat-icon>
+                </button>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+
+      </div>
+    </mat-sidenav-content>
+
+
+  </mat-sidenav-container>
+
+
+</div>

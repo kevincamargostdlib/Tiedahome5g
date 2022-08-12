@@ -1,0 +1,174 @@
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.opcionImagen {
+  background: #ff5d54 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 3px #00000029;
+  opacity: 1;
+  border-radius: 1em;
+  color: #fff;
+  position: absolute;
+  top: 1.9px;
+  right: 25px;
+  padding: 1px;
+  text-align: center;
+}
+
+.navbar-is-mobile .navbar-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  /* z-index: 2; */
+}
+
+h1.navbar-app-name {
+  margin-left: 8px;
+}
+
+.navbar-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+  background: #00000029;
+  width: calc(100% - 184px);
+}
+
+.navbar-is-mobile .navbar-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+/* menu */
+
+.mat-list-base .mat-list-item {
+  color: #f44336;
+}
+
+.navbar-toolbar {
+  height: 102px;
+  background: transparent linear-gradient(90deg, #ff885c 0%, #ff5353 100%) 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+}
+
+.mat-carrito {
+  width: 184px;
+  height: 204px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 24px 0px 0px 0px;
+  opacity: 1;
+}
+
+.slider-carro {
+  height: 100vh;
+  background: #ddd;
+  position: absolute;
+  z-index: 9999;
+  right: 1px;
+  top: 20px;
+  width: 184px;
+  background: #f4f4f4 0% 0% no-repeat padding-box;
+  box-shadow: 6px 3px 6px #00000029;
+  /* box-shadow: 0px 3px 6px #00000029; */
+  border-radius: 24px 0px 0px 0px;
+}
+
+.navbar-opcion {
+  position: absolute;
+  top: 12px;
+  left: 0px;
+  width: 164px;
+  height: 120px;
+  /* background: var(--unnamed-color-ff5d54) 0% 0% no-repeat padding-box; */
+  background: #ff5d54 0% 0% no-repeat padding-box;
+  box-shadow: 6px 3px 6px #00000029;
+  border-radius: 0px 24px 0px 0px;
+  opacity: 1;
+}
+
+.mat-drawer {
+  transform: none;
+  visibility: visible;
+  width: 186px;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 6px -3px 6px #00000029;
+  border-radius: 0px 24px 0px 0px;
+  opacity: 1;
+  font-size: 17px;
+}
+
+.texto {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) 16px/21px Roboto;
+  color: var(--unnamed-color-ff5d54);
+  text-align: left;
+  font: normal normal bold 16px/21px Roboto;
+  letter-spacing: 0.02px;
+  color: #ff5d54;
+  opacity: 1;
+  padding-left: 20px;
+}
+.carrito {
+  font-size: 43px;
+  color: #ff4c44;
+}
+
+.box-gris {
+  top: 104px;
+  left: 840px;
+  width: 184px;
+  height: 64px;
+  background: var(--unnamed-color-efefef) 0% 0% no-repeat padding-box;
+  background: #efefef 0% 0% no-repeat padding-box;
+  opacity: 1;
+  text-align: center;
+}
+.total {
+  margin-top: -14px;
+}
+.titulo-total {
+  color: #625d5d;
+  font-size: 15px;
+}
+.tituloPage {
+  text-align: center;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  font-size: 2em;
+  padding-top: 1em;
+}
+.mat-form-field-wrapper {
+  background: #fff;
+  border: 1px solid;
+}
+.botonDerecha {
+  padding: 9px;
+}
+.botonColor {
+  background: #ff754f;
+  height: 3em;
+  color: #fff;
+
+}
+.botonIzquierda {
+  padding: 9px;
+}
+
+.inputBuscar{
+  width: 100%;
+  padding: 7px;
+  border: 2px solid #f7714d;
+  border-radius: 5px;
+}
+.inputTamano{
+  font-size: 18px;
+}
